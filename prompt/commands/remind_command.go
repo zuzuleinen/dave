@@ -14,6 +14,7 @@ func Remind(db *sql.DB) {
 	fmt.Print("Task name: ")
 	reader := bufio.NewReader(os.Stdin)
 	taskName, _ := reader.ReadString('\n')
+
 	taskName = strings.TrimSuffix(taskName, "\n")
 	dbItems := []reminder.Reminder{{taskName}}
 

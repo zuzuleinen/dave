@@ -8,13 +8,12 @@ import (
 )
 
 func SayHello() {
-	fmt.Println("Your wish is my command")
+	fmt.Println("Yes, sir?")
 }
 
 func AskForCommand() string {
 	var command string
-
-	fmt.Print("What do you want me to do:")
+	fmt.Print("\t")
 	fmt.Scan(&command)
 	return command
 }
