@@ -6,6 +6,7 @@ import (
 	"github.com/zuzuleinen/dave/prompt"
 	"os"
 	"github.com/mitchellh/go-homedir"
+	"github.com/zuzuleinen/dave/email"
 )
 
 const DB_FILE = "davedb.db"
@@ -13,6 +14,9 @@ const DB_FILE = "davedb.db"
 func main() {
 	db := database.Connect(dbPath())
 	defer db.Close()
+
+
+	email.Send("andrey.boar@gmail.com", "Reminder", "Some plain text")
 
 	prompt.SayHello()
 	command := prompt.AskForCommand()
