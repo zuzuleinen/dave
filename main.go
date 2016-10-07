@@ -2,11 +2,11 @@ package main
 
 import (
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/mitchellh/go-homedir"
 	"github.com/zuzuleinen/dave/database"
+	"github.com/zuzuleinen/dave/email"
 	"github.com/zuzuleinen/dave/prompt"
 	"os"
-	"github.com/mitchellh/go-homedir"
-	"github.com/zuzuleinen/dave/email"
 )
 
 const DB_FILE = "davedb.db"
@@ -14,7 +14,6 @@ const DB_FILE = "davedb.db"
 func main() {
 	db := database.Connect(dbPath())
 	defer db.Close()
-
 
 	email.Send("andrey.boar@gmail.com", "Reminder", "Some plain text")
 
@@ -25,6 +24,5 @@ func main() {
 
 func dbPath() string {
 	homeDir, _ := homedir.Dir()
-	return homeDir + string(os.PathSeparator) + DB_FILE;
+	return homeDir + string(os.PathSeparator) + DB_FILE
 }
-

@@ -32,19 +32,22 @@ func Save(db *sql.DB, reminders []Reminder) {
 	}
 }
 
-
 func Read(db *sql.DB) []Reminder {
 	sql_readall := `SELECT Name FROM reminders`
 
 	rows, err := db.Query(sql_readall)
-	if err != nil { panic(err) }
+	if err != nil {
+		panic(err)
+	}
 	defer rows.Close()
 
 	var result []Reminder
 	for rows.Next() {
 		item := Reminder{}
 		err2 := rows.Scan(&item.Name)
-		if err2 != nil { panic(err2) }
+		if err2 != nil {
+			panic(err2)
+		}
 		result = append(result, item)
 	}
 	return result

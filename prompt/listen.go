@@ -1,8 +1,8 @@
 package prompt
 
 import (
-	"fmt"
 	"database/sql"
+	"fmt"
 	"github.com/fatih/color"
 	"github.com/zuzuleinen/dave/prompt/commands"
 )
