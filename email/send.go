@@ -2,12 +2,11 @@ package email
 
 import (
 	"github.com/mailgun/mailgun-go"
-	"log"
 	"github.com/zuzuleinen/dave/config"
+	"log"
 )
 
-
-func Send(from, subject, text string)  {
+func Send(from, subject, text string) {
 	mailGunConfig := config.Config()
 
 	mg := mailgun.NewMailgun(
