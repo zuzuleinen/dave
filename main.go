@@ -4,7 +4,6 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/mitchellh/go-homedir"
 	"github.com/zuzuleinen/dave/database"
-	"github.com/zuzuleinen/dave/email"
 	"github.com/zuzuleinen/dave/prompt"
 	"os"
 )
@@ -15,7 +14,8 @@ func main() {
 	db := database.Connect(dbPath())
 	defer db.Close()
 
-	email.Send("andrey.boar@gmail.com", "Reminder", "Some plain text")
+	//todo
+	//email.Send("andrey.boar@gmail.com", "Reminder", "Some plain text")
 
 	prompt.SayHello()
 	command := prompt.AskForCommand()
