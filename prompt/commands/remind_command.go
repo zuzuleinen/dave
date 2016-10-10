@@ -22,18 +22,19 @@ func Remind(db *sql.DB) {
 
 	year := scanYear()
 	month := scanMonth()
+	day := scanDay()
 	hour := scanHour()
 
 	reminder.Save(db, dbItems)
 	color.Green("Great I will remind you to %s.", taskName)
-	fmt.Println("Time is", year, month, hour)
+	fmt.Println("Time is", year, day, month, hour)
 }
 
 func scanYear() int {
 	var y int
 	var prompt string
 
-	fmt.Print("Year[2016]:")
+	fmt.Print(fmt.Sprintf("Year[%d]:", time.Now().Year()))
 	fmt.Scanln(&prompt)
 
 	if prompt == "" {
@@ -49,7 +50,7 @@ func scanMonth() string {
 	var prompt string
 	var m string
 
-	fmt.Print("Month[10]:")
+	fmt.Print(fmt.Sprintf("Month[%d]:", time.Now().Month()))
 	fmt.Scanln(&prompt)
 
 	if prompt == "" {
@@ -63,10 +64,26 @@ func scanMonth() string {
 }
 
 func scanHour() string {
-	var hour string
+	var prompt string
 
 	fmt.Print("Time(HH:mm):")
-	fmt.Scanln(&hour)
+	fmt.Scanln(&prompt)
 
-	return hour
+	return prompt
+}
+
+func scanDay() int {
+	var d int
+	var prompt string
+
+	fmt.Print(fmt.Sprintf("Day[%d]:", time.Now().Day()))
+	fmt.Scanln(&prompt)
+
+	if prompt == "" {
+		d = time.Now().Day()
+	} else {
+		d, _ = strconv.Atoi(prompt)
+	}
+
+	return d
 }
