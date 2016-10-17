@@ -35,7 +35,7 @@ func ListCredentials(db *sql.DB) {
 	items := credentials.Read(db)
 	fmt.Println("Username | Password | Website | Notes\n")
 	for _, item := range items {
-		fmt.Println(item.Username, "|", item.Password, "|", item.Website, "|", item.Notes)
+		fmt.Println(item.Username, item.Password, item.Website, item.Notes)
 	}
 }
 
