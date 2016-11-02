@@ -25,16 +25,11 @@ func Remind(db *sql.DB) {
 	taskName = strings.TrimSuffix(taskName, "\n")
 	dbItems := []reminder.Reminder{{taskName}}
 
-	year := scanYear()
-	month := scanMonth()
-	day := scanDay()
 	exactTime := scanExactTime()
-
-	fmt.Println(exactTime)
+	t := time.Date(scanYear(), scanMonth(), scanDay(), exactTime.hours, exactTime.minutes, 0, 0, time.UTC)
 
 	reminder.Save(db, dbItems)
-	color.Green("Great I will remind you to %s.", taskName)
-	fmt.Println("Time is", year, day, month.String(), exactTime)
+	color.Green("Great I will remind you to `%s`. Time: %s.", taskName, t.Format("Monday, 2 Jan 2006 at 15:04"))
 }
 
 func scanYear() int {
@@ -78,10 +73,10 @@ func scanExactTime() ExactTime {
 
 	res := strings.Split(prompt, ":")
 
-	hours, _ := strconv.Atoi(res[0])
-	minutes, _ := strconv.Atoi(res[1])
+	h, _ := strconv.Atoi(res[0])
+	m, _ := strconv.Atoi(res[1])
 
-	return ExactTime{hours, minutes}
+	return ExactTime{hours: h, minutes: m}
 }
 
 func scanDay() int {
