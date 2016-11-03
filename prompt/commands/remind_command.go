@@ -23,10 +23,12 @@ func Remind(db *sql.DB) {
 	reader := bufio.NewReader(os.Stdin)
 	taskName, _ := reader.ReadString('\n')
 	taskName = strings.TrimSuffix(taskName, "\n")
-	dbItems := []reminder.Reminder{{taskName}}
+
 
 	exactTime := scanExactTime()
 	t := time.Date(scanYear(), scanMonth(), scanDay(), exactTime.hours, exactTime.minutes, 0, 0, time.UTC)
+
+	dbItems := []reminder.Reminder{{taskName, t.Format("Monday, 2 Jan 2006 at 15:04")}}
 
 	reminder.Save(db, dbItems)
 	color.Green("Great I will remind you to `%s`. Time: %s.", taskName, t.Format("Monday, 2 Jan 2006 at 15:04"))

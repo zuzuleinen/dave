@@ -4,11 +4,12 @@ import "database/sql"
 
 type Reminder struct {
 	Name string
+	Time string
 }
 
 func CreateTable(db *sql.DB) {
 	// create table if not exists
-	sql_table := `CREATE TABLE IF NOT EXISTS reminders(Name TEXT);`
+	sql_table := `CREATE TABLE IF NOT EXISTS reminders(Name TEXT, Time TEXT);`
 	_, err := db.Exec(sql_table)
 	if err != nil {
 		panic(err)
@@ -16,7 +17,7 @@ func CreateTable(db *sql.DB) {
 }
 
 func Save(db *sql.DB, reminders []Reminder) {
-	sql_additem := `INSERT INTO reminders(Name) values(?)`
+	sql_additem := `INSERT INTO reminders(Name,Time) values(?,?)`
 
 	stmt, err := db.Prepare(sql_additem)
 	if err != nil {
@@ -25,7 +26,7 @@ func Save(db *sql.DB, reminders []Reminder) {
 	defer stmt.Close()
 
 	for _, item := range reminders {
-		_, err2 := stmt.Exec(item.Name)
+		_, err2 := stmt.Exec(item.Name, item.Time)
 		if err2 != nil {
 			panic(err2)
 		}
@@ -33,7 +34,7 @@ func Save(db *sql.DB, reminders []Reminder) {
 }
 
 func Read(db *sql.DB) []Reminder {
-	sql_readall := `SELECT Name FROM reminders`
+	sql_readall := `SELECT Name, Time FROM reminders`
 
 	rows, err := db.Query(sql_readall)
 	if err != nil {
@@ -44,7 +45,7 @@ func Read(db *sql.DB) []Reminder {
 	var result []Reminder
 	for rows.Next() {
 		item := Reminder{}
-		err2 := rows.Scan(&item.Name)
+		err2 := rows.Scan(&item.Name, &item.Time)
 		if err2 != nil {
 			panic(err2)
 		}
