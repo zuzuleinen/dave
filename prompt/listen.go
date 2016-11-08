@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/fatih/color"
 	"github.com/zuzuleinen/dave/prompt/commands"
+	"os"
 )
 
 func SayHello() {
@@ -32,8 +33,8 @@ func ObeyCommand(command string, db *sql.DB) {
 		commands.Credential(db)
 	case "credentials":
 		commands.ListCredentials(db)
-
 	default:
 		color.Red("Sorry, I dont understand '%s' command.", command)
+		os.Exit(1)
 	}
 }
