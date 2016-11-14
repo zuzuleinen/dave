@@ -34,9 +34,9 @@ func Save(db *sql.DB, reminders []Reminder) {
 }
 
 func Read(db *sql.DB) []Reminder {
-	sql_readall := `SELECT Name, Time FROM reminders`
+	sql_readAll := `SELECT Name, Time FROM reminders`
 
-	rows, err := db.Query(sql_readall)
+	rows, err := db.Query(sql_readAll)
 	if err != nil {
 		panic(err)
 	}

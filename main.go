@@ -1,23 +1,22 @@
 package main
 
 import (
-	"fmt"
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/mitchellh/go-homedir"
 	"github.com/zuzuleinen/dave/database"
 	"github.com/zuzuleinen/dave/prompt"
 	"os"
+	"github.com/zuzuleinen/dave/reminder"
 )
 
 const DB_FILE = "davedb.db"
 
 func main() {
+	db := database.Connect(dbPath())
+	defer db.Close()
 	if contains(os.Args, "cli") {
-		fmt.Println("Is cli mode.")
-		//todo check all reminders and send e-mail when its due date
+		reminder.Remind(db)
 	} else {
-		db := database.Connect(dbPath())
-		defer db.Close()
 
 		//todo
 		//email.Send("andrey.boar@gmail.com", "Reminder", "Some plain text")
