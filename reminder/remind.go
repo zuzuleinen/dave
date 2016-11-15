@@ -14,6 +14,7 @@ func Remind(db *sql.DB) {
 	for _, r := range reminders {
 		if shouldRemind(r) {
 			sendReminderMail(r.Name)
+			Delete(r.RowId, db)
 		}
 	}
 }

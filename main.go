@@ -14,6 +14,7 @@ const DB_FILE = "davedb.db"
 func main() {
 	db := database.Connect(dbPath())
 	defer db.Close()
+
 	if contains(os.Args, "cli") {
 		reminder.Remind(db)
 	} else {

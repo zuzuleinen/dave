@@ -29,7 +29,7 @@ func Remind(db *sql.DB) {
 	exactTime := scanExactTime()
 	t := time.Date(scanYear(), scanMonth(), scanDay(), exactTime.hours, exactTime.minutes, 0, 0, time.UTC)
 
-	dbItems := []reminder.Reminder{{taskName, t.Format(config.TimeFormat())}}
+	dbItems := []reminder.Reminder{{taskName, t.Format(config.TimeFormat()), 0, 0}}
 
 	reminder.Save(db, dbItems)
 	color.Green("Great I will remind you to `%s`. Time: %s.", taskName, t.Format(config.TimeFormat()))
