@@ -9,4 +9,6 @@ an issue or adding new code.
 
 # How to use
 
-Ussage: $ dave <command>
+```shell
+dave <command>
+```
