@@ -10,5 +10,5 @@ an issue or adding new code.
 # How to use
 
 ```shell
-dave <command>
+$ dave <command>
 ```
