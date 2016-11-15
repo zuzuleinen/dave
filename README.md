@@ -7,4 +7,6 @@ you will be able to add reminders via CLI which will be sent to your e-mail when
 Please note that this is work in progress and my creator is just learning Go. You can always contribute to me by opening
 an issue or adding new code.
 
+# How to use
 
+Ussage: $ dave <command>
