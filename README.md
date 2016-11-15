@@ -10,7 +10,7 @@ an issue or adding new code.
 # How to use
 
 ```shell
-$ dave [command]
+$ dave command
 ```
 ## List of commands
 
@@ -20,3 +20,5 @@ $ dave [command]
 	credential:     Add a new credential record.
 	credentials:    List all credentials.
 
+
+@check http://docopt.org/
