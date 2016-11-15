@@ -1,13 +1,13 @@
-## CLI Personal assistant
+# CLI Personal assistant
 
-# About
+## About
 Hi! I'm Dave, your personal assistant. I'm not quite ready yet, since my creator has a full-time job and is a lazy bum. But in the future
 you will be able to add reminders via CLI which will be sent to your e-mail when the time is due.
 
 Please note that this is work in progress and my creator is just learning Go. You can always contribute to me by opening
 an issue or adding new code.
 
-# Usage
+## Usage
 
 ```shell
 Usage:
