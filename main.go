@@ -5,7 +5,6 @@ import (
 	"github.com/zuzuleinen/dave/database"
 	"github.com/zuzuleinen/dave/prompt"
 	"os"
-	"github.com/zuzuleinen/dave/reminder"
 	"github.com/zuzuleinen/dave/config"
 )
 
@@ -13,20 +12,13 @@ func main() {
 	db := database.Connect(config.DbPath())
 	defer db.Close()
 
-	if contains(os.Args, "cli") {
-		reminder.Remind(db)
-	} else {
-		prompt.SayHello()
-		command := prompt.AskForCommand()
-		prompt.ObeyCommand(command, db)
-	}
-}
+	var command string
 
-func contains(s []string, e string) bool {
-	for _, value := range s {
-		if e == value {
-			return true
-		}
+	if (len(os.Args) > 1) {
+		command = os.Args[1]
+	} else {
+		command = "list"
 	}
-	return false
+
+	prompt.ObeyCommand(command, db)
 }

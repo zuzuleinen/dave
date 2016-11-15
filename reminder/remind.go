@@ -10,11 +10,13 @@ import (
 )
 
 func Remind(db *sql.DB) {
-	reminders := Read(db)
-	for _, r := range reminders {
-		if shouldRemind(r) {
-			sendReminderMail(r.Name)
-			Delete(r.RowId, db)
+	for true {
+		reminders := Read(db)
+		for _, r := range reminders {
+			if shouldRemind(r) {
+				sendReminderMail(r.Name)
+				Delete(r.RowId, db)
+			}
 		}
 	}
 }
@@ -37,5 +39,5 @@ func sendReminderMail(todo string) {
 	subject := fmt.Sprintf("Reminder: %s", todo)
 	body := fmt.Sprintf("Hey, you need to %s", todo)
 
-	email.Send("andrey.boar@gmail.com", subject, body)
+	email.Send(config.YourEmail(), subject, body)
 }
