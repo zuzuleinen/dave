@@ -7,18 +7,24 @@ you will be able to add reminders via CLI which will be sent to your e-mail when
 Please note that this is work in progress and my creator is just learning Go. You can always contribute to me by opening
 an issue or adding new code.
 
-# How to use
+## Usage
 
 ```shell
-$ dave command
-```
-## List of commands
+Usage:
+    dave <command>
 
-	install:        Install the database.
-	remind:         Create a new reminder.
-	reminders:      List all pending reminders.
-	credential:     Add a new credential record.
-	credentials:    List all credentials.
+List of commands:
+  install:        Install the SQLite database.
+  remind:         Create a new reminder.
+  reminders:      List all pending reminders.
+  credential:     Add a new credential record.
+  credentials:    List all credentials.
+
+
+Options:
+  -h --help         Show this screen.
+  -v, --version     Show version.
+```
 
 
 @check http://docopt.org/
