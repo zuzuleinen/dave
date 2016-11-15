@@ -6,12 +6,12 @@ import (
 	"github.com/zuzuleinen/dave/prompt/commands"
 	"os"
 	"github.com/zuzuleinen/dave/reminder"
+	"github.com/zuzuleinen/dave/config"
+	"fmt"
 )
 
 func ObeyCommand(command string, db *sql.DB) {
 	switch command {
-	case "list":
-		commands.List()
 	case "install":
 		commands.InstallDatabase(db)
 	case "remind":
@@ -24,9 +24,13 @@ func ObeyCommand(command string, db *sql.DB) {
 		commands.ListCredentials(db)
 	case "cli":
 		reminder.Remind(db)
+	case "--help", "-h":
+		commands.Help()
+	case "--version", "-v":
+		fmt.Println(config.Version())
 	default:
 		color.Red("Sorry, I dont understand '%s' command.", command)
-		commands.List()
+		commands.Help()
 		os.Exit(1)
 	}
 }

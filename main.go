@@ -17,7 +17,7 @@ func main() {
 	if (len(os.Args) > 1) {
 		command = os.Args[1]
 	} else {
-		command = "list"
+		command = "--help"
 	}
 
 	prompt.ObeyCommand(command, db)

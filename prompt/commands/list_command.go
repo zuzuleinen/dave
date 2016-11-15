@@ -2,13 +2,23 @@ package commands
 
 import "fmt"
 
-func List() {
-	fmt.Println("The list of available commands are:")
-	fmt.Println()
-	fmt.Println("\tinstall:        Install the SQLite database.")
-	fmt.Println("\tremind:         Create a new reminder.")
-	fmt.Println("\treminders:      List all pending reminders.")
-	fmt.Println("\tcredential:     Add a new credential record.")
-	fmt.Println("\tcredentials:    List all credentials.")
-	fmt.Println()
+func Help() {
+	doc := `
+Usage:
+    dave <command>
+
+List of commands:
+  install:        Install the SQLite database.
+  remind:         Create a new reminder.
+  reminders:      List all pending reminders.
+  credential:     Add a new credential record.
+  credentials:    List all credentials.
+
+
+Options:
+  -h --help         Show this screen.
+  -v, --version     Show version.
+`
+
+	fmt.Println(doc)
 }
