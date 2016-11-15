@@ -12,7 +12,7 @@ an issue or adding new code.
 ```shell
 $ dave <command>
 ```
-# List of commands
+## List of commands
 
 	install:        Install the database.
 	remind:         Create a new reminder.
