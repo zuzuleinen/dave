@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"github.com/zuzuleinen/dave/config"
 )
 
 type ExactTime struct {
@@ -28,10 +29,10 @@ func Remind(db *sql.DB) {
 	exactTime := scanExactTime()
 	t := time.Date(scanYear(), scanMonth(), scanDay(), exactTime.hours, exactTime.minutes, 0, 0, time.UTC)
 
-	dbItems := []reminder.Reminder{{taskName, t.Format("Monday, 2 Jan 2006 at 15:04")}}
+	dbItems := []reminder.Reminder{{taskName, t.Format(config.TimeFormat())}}
 
 	reminder.Save(db, dbItems)
-	color.Green("Great I will remind you to `%s`. Time: %s.", taskName, t.Format("Monday, 2 Jan 2006 at 15:04"))
+	color.Green("Great I will remind you to `%s`. Time: %s.", taskName, t.Format(config.TimeFormat()))
 }
 
 func scanYear() int {

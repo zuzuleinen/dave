@@ -6,6 +6,7 @@ import (
 	"time"
 	"log"
 	"github.com/zuzuleinen/dave/email"
+	"github.com/zuzuleinen/dave/config"
 )
 
 func Remind(db *sql.DB) {
@@ -18,7 +19,7 @@ func Remind(db *sql.DB) {
 }
 
 func shouldRemind(r Reminder) bool {
-	t, err := time.Parse("Monday, 2 Jan 2006 at 15:04", r.Time)
+	t, err := time.Parse(config.TimeFormat(), r.Time)
 
 	if err != nil {
 		log.Fatalln("Cannot parse time", err)
