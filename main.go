@@ -17,10 +17,6 @@ func main() {
 	if contains(os.Args, "cli") {
 		reminder.Remind(db)
 	} else {
-
-		//todo
-		//email.Send("andrey.boar@gmail.com", "Reminder", "Some plain text")
-
 		prompt.SayHello()
 		command := prompt.AskForCommand()
 		prompt.ObeyCommand(command, db)

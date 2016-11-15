@@ -5,18 +5,19 @@ import (
 	"database/sql"
 	"time"
 	"log"
+	"github.com/zuzuleinen/dave/email"
 )
 
 func Remind(db *sql.DB) {
 	reminders := Read(db)
 	for _, r := range reminders {
-		if shouldRemember(r) {
-			fmt.Println("Remind me to", r.Name)
+		if shouldRemind(r) {
+			sendReminderMail(r.Name)
 		}
 	}
 }
 
-func shouldRemember(r Reminder) bool {
+func shouldRemind(r Reminder) bool {
 	t, err := time.Parse("Monday, 2 Jan 2006 at 15:04", r.Time)
 
 	if err != nil {
@@ -28,4 +29,11 @@ func shouldRemember(r Reminder) bool {
 		return true
 	}
 	return false
+}
+
+func sendReminderMail(todo string) {
+	subject := fmt.Sprintf("Reminder: %s", todo)
+	body := fmt.Sprintf("Hey, you need to %s", todo)
+
+	email.Send("andrey.boar@gmail.com", subject, body)
 }
