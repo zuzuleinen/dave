@@ -57,7 +57,7 @@ Options:
   -h --help         Show this screen.
   -v, --version     Show version.
 ```
-Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus'` and then usage for this command becomes just `focus`
+Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus'` and then usage for this command becomes just `focus`. The same with focus-clear command.
 
 ## Questions or suggestions
 If you encounter a problem feel free to [open](https://github.com/zuzuleinen/dave/issues/new) an issue.
