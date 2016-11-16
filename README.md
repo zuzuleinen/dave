@@ -19,13 +19,10 @@ So far this tool is available only for **Linux** distributions. However besides 
 ```shell
 $ go get github.com/zuzuleinen/dave
 $ cd $GOPATH/src/github.com/zuzuleinen/dave/
- 
- $ go install
- 
- $ dave install
- 
- $ dave
- ```
+$ go install
+$ dave install
+$ dave
+```
 
 
 ## Usage
