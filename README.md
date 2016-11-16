@@ -1,4 +1,4 @@
-# CLI Personal assistant
+# Dave - CLI Personal assistant
 
 <p align="center">
 <img align="middle" src="dave.jpg" width="200" />
@@ -6,7 +6,8 @@
 
 
 ## About
-This is my first project written in Go. Dave is a CLI tool which automates some taks I often do at work such as: add a reminder for a certain day and receive and e-mail when time is due, add some credentials from various projects, cancel the noise by blocking certain websites.
+This is my first project written in Go. Dave is a CLI tool which automates some taks I do at work such as: add a reminder for a certain day and receive and e-mail when time is due, add some credentials from various projects, cancel the noise by blocking certain websites. In the future I might add new commands.
+
 
 ## Requirements
 
