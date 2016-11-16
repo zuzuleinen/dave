@@ -19,6 +19,7 @@ List of commands:
   reminders:      List all pending reminders.
   credential:     Add a new credential record.
   credentials:    List all credentials.
+  focus:          Block websites from config/user.go/FavouriteWebSites
 
 
 Options:
@@ -26,5 +27,9 @@ Options:
   -v, --version     Show version.
 ```
 
+
+sudo env=""
+
+Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus' `
 
 @check http://docopt.org/

@@ -24,6 +24,8 @@ func ObeyCommand(command string, db *sql.DB) {
 		commands.ListCredentials(db)
 	case "cli":
 		reminder.Remind(db)
+	case "focus":
+		commands.Focus()
 	case "--help", "-h":
 		commands.Help()
 	case "--version", "-v":
