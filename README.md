@@ -26,4 +26,4 @@ Options:
   -h --help         Show this screen.
   -v, --version     Show version.
 ```
-Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus' `
+Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus' and then usage for thos command becomes `focus`
