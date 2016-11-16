@@ -19,7 +19,6 @@ You should have a [mailgun](http://www.mailgun.com/) account. You can set-up a f
 ## Installation
 
 1. Prepare the executable
-
 ```shell
 $ go get github.com/zuzuleinen/dave
 $ cd $GOPATH/src/github.com/zuzuleinen/dave/
