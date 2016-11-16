@@ -10,7 +10,9 @@ an issue or adding new code.
 ## Requirements
 
 Go should be [installed and set up](https://golang.org/doc/install) on your system.
+
 So far this tool is available only for **Linux** distributions. However besides `focus` and `focus-clear`, the rest of the commands should also work on Windows/Mac OS.
+
 [SQLite](https://sqlite.org/) must be installed on your system. This version was tested with **sqlite3**.
 
 ## Installation
