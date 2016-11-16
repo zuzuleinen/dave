@@ -1,7 +1,7 @@
 # CLI Personal assistant
 
 <div style="text-align:center">
-<img src="dave.jpg" width="200">
+<img align="middle" src="dave.jpg" width="200" />
 </div>
 
 
