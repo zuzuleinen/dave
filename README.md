@@ -9,7 +9,7 @@ an issue or adding new code.
 
 ## Requirements
 
-Go should be [installed and set up](https://golang.org/doc/install) on your system.
+Go should be [installed and set up](https://golang.org/doc/install) on your system. Tested with version **go1.7.1**
 
 So far this tool is available only for **Linux** distributions. However besides `focus` and `focus-clear`, the rest of the commands should also work on Windows/Mac OS.
 
