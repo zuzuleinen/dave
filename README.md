@@ -59,4 +59,4 @@ Options:
 Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus'` and then usage for this command becomes just `focus`
 
 ## Questions or suggestions
-If you encounter a problem feel free to [open](dave/issues/new) an issue.
+If you encounter a problem feel free to [open](https://github.com/zuzuleinen/dave/issues/new) an issue.
