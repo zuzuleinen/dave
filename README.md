@@ -1,7 +1,7 @@
 # CLI Personal assistant
 
-![Dave](dave.jpg)
 
+<img src="dave.jpg" alt="Dave" style="width: 100px;"/>
 
 ## About
 This is my first project written in Go. Dave is a CLI tool which automates some taks I often do at work such as: add a reminder for a certain day and receive and e-mail when time is due, add some credentials from various projects, cancel the noise by blocking certain websites.
