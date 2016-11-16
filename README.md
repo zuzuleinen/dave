@@ -6,7 +6,7 @@
 
 
 ## About
-This is my first project written in Go. Dave is a CLI tool which automates some taks I do at work such as: add a reminder for a certain day and receive and e-mail when time is due, add some credentials from various projects, cancel the noise by blocking certain websites. In the future I might add new commands.
+This is my first project written in Go. Dave is a CLI tool which automates some taks I do at work such as: add a reminder for a certain day and receive and e-mail when time is due, add credentials from various projects, cancel the noise by blocking certain websites. In the future I might add new commands.
 
 
 ## Requirements
