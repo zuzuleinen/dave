@@ -1,6 +1,6 @@
 # CLI Personal assistant
 
-<img src="dave.jpg" width="200">
+<img src="dave.jpg" width="200" align="middle">
 
 
 ## About
