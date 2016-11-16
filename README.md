@@ -18,7 +18,7 @@ You should have a [mailgun](http://www.mailgun.com/) account. You can set-up a f
 
 ## Installation
 
-1. Prepare the executable 
+* Prepare the executable 
 
 ```shell
 $ go get github.com/zuzuleinen/dave
@@ -27,8 +27,8 @@ $ go install
 $ dave install
 $ dave
 ```
-2. Add your e-mail and the list of websites you want to block in *dave/config/user.go*
-2. Add mailgun credentials in *dave/config/mailgun.go*
+* Add your e-mail and the list of websites you want to block in *dave/config/user.go*
+* Add mailgun credentials in *dave/config/mailgun.go*
 
 
 
