@@ -1,8 +1,8 @@
 # CLI Personal assistant
 
-<div style="text-align:center">
+<p align="center">
 <img align="middle" src="dave.jpg" width="200" />
-</div>
+</p>
 
 
 ## About
