@@ -13,11 +13,6 @@ import (
 	"github.com/zuzuleinen/dave/config"
 )
 
-type ExactTime struct {
-	hours   int
-	minutes int
-}
-
 func Remind(db *sql.DB) {
 	fmt.Print("Task name: ")
 
@@ -25,14 +20,12 @@ func Remind(db *sql.DB) {
 	taskName, _ := reader.ReadString('\n')
 	taskName = strings.TrimSuffix(taskName, "\n")
 
-
-	exactTime := scanExactTime()
-	t := time.Date(scanYear(), scanMonth(), scanDay(), exactTime.hours, exactTime.minutes, 0, 0, time.UTC)
+	t := time.Date(scanYear(), scanMonth(), scanDay(), 0, 0, 0, 0, time.UTC)
 
 	dbItems := []reminder.Reminder{{taskName, t.Format(config.TimeFormat()), 0, 0}}
 
 	reminder.Save(db, dbItems)
-	color.Green("Great I will remind you to `%s`. Time: %s.", taskName, t.Format(config.TimeFormat()))
+	color.Green("Great I will remind you to `%s`. Date: %s.", taskName, t.Format(config.TimeFormat()))
 }
 
 func scanYear() int {
@@ -66,20 +59,6 @@ func scanMonth() time.Month {
 	}
 
 	return m
-}
-
-func scanExactTime() ExactTime {
-	var prompt string
-
-	fmt.Print("Time(HH:mm):")
-	fmt.Scanln(&prompt)
-
-	res := strings.Split(prompt, ":")
-
-	h, _ := strconv.Atoi(res[0])
-	m, _ := strconv.Atoi(res[1])
-
-	return ExactTime{hours: h, minutes: m}
 }
 
 func scanDay() int {
