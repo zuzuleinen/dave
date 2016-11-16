@@ -26,10 +26,4 @@ Options:
   -h --help         Show this screen.
   -v, --version     Show version.
 ```
-
-
-sudo env=""
-
 Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus' `
-
-@check http://docopt.org/
