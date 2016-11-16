@@ -27,4 +27,4 @@ Options:
 ```
 
 
-
+alias focus='sudo env "PATH=$PATH" dave focus'
