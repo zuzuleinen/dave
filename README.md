@@ -1,10 +1,10 @@
 # CLI Personal assistant
 
-## About
-Hi! I'm Dave, your personal assistant. I'm not quite ready yet, since my creator has a full-time job and is a lazy bum. But in the future
-you will be able to add reminders via CLI which will be sent to your e-mail when the time is due, save credentials and focus at work by blocking websites you frequently visit.
+![Dave](dave.jpg)
 
-Please note that this is work in progress and my creator is just learning Go. You can always contribute to me by opening as pull request.
+
+## About
+This is my first project written in Go. Dave is a CLI tool which automates some taks I often do at work such as: add a reminder for a certain day and receive and e-mail when time is due, add some credentials from various projects, cancel the noise by blocking certain websites.
 
 ## Requirements
 
