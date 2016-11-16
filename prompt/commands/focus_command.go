@@ -7,8 +7,10 @@ import (
 	"bytes"
 )
 
+const HOSTS_FILE = "/etc/hosts"
+
 func Focus() {
-	f, err := ioutil.ReadFile("/etc/hosts")
+	f, err := ioutil.ReadFile(HOSTS_FILE)
 
 	if err != nil {
 		panic(fmt.Sprintf("%s", err))
@@ -17,8 +19,7 @@ func Focus() {
 	for _, c := range newContent() {
 		f = append(f, c)
 	}
-
-	ioutil.WriteFile("/etc/hosts", f, 644)
+	ioutil.WriteFile(HOSTS_FILE, f, 644)
 }
 
 func newContent() []byte {
