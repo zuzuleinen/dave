@@ -29,7 +29,7 @@ $ dave
 ```
 * Add your e-mail and the list of websites you want to block in *dave/config/user.go*
 * Add mailgun credentials in *dave/config/mailgun.go*
-
+* Set up the daemon which can be started with `$ dave cli`
 
 
 
