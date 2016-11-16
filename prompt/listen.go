@@ -26,6 +26,8 @@ func ObeyCommand(command string, db *sql.DB) {
 		reminder.Remind(db)
 	case "focus":
 		commands.Focus()
+	case "focus-clear":
+		commands.ClearFocus()
 	case "--help", "-h":
 		commands.Help()
 	case "--version", "-v":

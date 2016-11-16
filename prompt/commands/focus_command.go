@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/zuzuleinen/dave/config"
 	"bytes"
+	"strings"
 )
 
 const HOSTS_FILE = "/etc/hosts"
@@ -20,6 +21,19 @@ func Focus() {
 		f = append(f, c)
 	}
 	ioutil.WriteFile(HOSTS_FILE, f, 644)
+}
+
+func ClearFocus() {
+	f, err := ioutil.ReadFile(HOSTS_FILE)
+
+	if err != nil {
+		panic(fmt.Sprintf("%s", err))
+	}
+	fmt.Println(string(f))
+
+	final := strings.Replace(string(f), string(newContent()), "", -1)
+
+	fmt.Println(final)
 }
 
 func newContent() []byte {

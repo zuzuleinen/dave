@@ -20,6 +20,7 @@ List of commands:
   credential:     Add a new credential record.
   credentials:    List all credentials.
   focus:          Block websites from config/user.go/FavouriteWebSites
+  focus-clear:    Unblock websites from config/user.go/FavouriteWebSites
 
 
 Options:
