@@ -59,8 +59,8 @@ Options:
 ```
 
 Since `dave focus` and `dave focus-clear` requires sudo, you should add an alias. Add these 2 lines in you .bashrc file:
-` alias focus='sudo env "PATH=$PATH" dave focus'`
-` alias focus-clear='sudo env "PATH=$PATH" dave focus-clear'`
+` alias focus='sudo env "PATH=$PATH" dave focus'`<br>
+` alias focus-clear='sudo env "PATH=$PATH" dave focus-clear'`</br>
 Now, you can use `focus` and `focus-clear` commands.
 
 ## Questions or suggestions
