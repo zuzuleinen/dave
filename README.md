@@ -11,7 +11,8 @@ an issue or adding new code.
 
 ```shell
 Usage:
-    dave <command>
+    dave <command> [argument]
+    dave  check    'a link to an article you want to read later'
 
 List of commands:
   install:        Install the SQLite database.
@@ -21,6 +22,8 @@ List of commands:
   credentials:    List all credentials.
   focus:          Block websites from config/user.go/FavouriteWebSites
   focus-clear:    Unblock websites from config/user.go/FavouriteWebSites
+  check:          Send an e-mail with subject "check this" and body the string argument
+
 
 
 Options:

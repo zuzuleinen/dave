@@ -10,7 +10,7 @@ import (
 	"fmt"
 )
 
-func ObeyCommand(command string, db *sql.DB) {
+func ObeyCommand(command string, argument string, db *sql.DB) {
 	switch command {
 	case "install":
 		commands.InstallDatabase(db)
@@ -26,6 +26,8 @@ func ObeyCommand(command string, db *sql.DB) {
 		reminder.Remind(db)
 	case "focus":
 		commands.Focus()
+	case "check":
+		commands.Check(argument)
 	case "focus-clear":
 		commands.ClearFocus()
 	case "--help", "-h":
