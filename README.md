@@ -1,11 +1,41 @@
-# CLI Personal assistant
+# Dave - CLI Personal assistant
+
+<p align="center">
+<img align="middle" src="dave.jpg" width="200" />
+</p>
+
 
 ## About
-Hi! I'm Dave, your personal assistant. I'm not quite ready yet, since my creator has a full-time job and is a lazy bum. But in the future
-you will be able to add reminders via CLI which will be sent to your e-mail when the time is due.
+This is my first project written in Go. Dave is a CLI tool which automates some taks I do at work such as: add a reminder for a certain day and receive and email me when time is due, add credentials from various projects, cancel the noise by blocking certain websites. In the future I might add new commands.
 
-Please note that this is work in progress and my creator is just learning Go. You can always contribute to me by opening
-an issue or adding new code.
+
+## Requirements
+
+Go should be [installed and set up](https://golang.org/doc/install) on your system. Tested with version **go1.7.1**
+
+So far this tool is available only for **Linux** distributions. However besides `focus` and `focus-clear`, the rest of the commands should also work on Windows/Mac OS.
+
+[SQLite](https://sqlite.org/) must be installed on your system. This version was tested with **sqlite3**.
+
+You should have a [mailgun](http://www.mailgun.com/) account. You can set-up a free account there and just use the sandbox credentials. It should be enough for the reminders you add(max 10.000 mails per month).
+
+## Installation
+
+* Prepare the executable 
+
+```shell
+$ go get github.com/zuzuleinen/dave
+$ cd $GOPATH/src/github.com/zuzuleinen/dave/
+$ go install
+$ dave install
+$ dave
+```
+* Add your e-mail and the list of websites you want to block in *dave/config/user.go*
+* Add mailgun credentials in *dave/config/mailgun.go*
+* Set up the daemon which can be started with `$ dave cli`
+
+
+
 
 ## Usage
 
@@ -30,4 +60,11 @@ Options:
   -h --help         Show this screen.
   -v, --version     Show version.
 ```
-Since `dave focus` requires sudo, you might want to alias: ` alias focus='sudo env "PATH=$PATH" dave focus'` and then usage for this command becomes just `focus`
+
+Since `dave focus` and `dave focus-clear` requires sudo, you should add an alias. Add these 2 lines in you .bashrc file:
+` alias focus='sudo env "PATH=$PATH" dave focus'`<br>
+` alias focus-clear='sudo env "PATH=$PATH" dave focus-clear'`</br>
+Now, you can use `focus` and `focus-clear` commands.
+
+## Questions or suggestions
+If you encounter a problem feel free to [open](https://github.com/zuzuleinen/dave/issues/new) an issue.

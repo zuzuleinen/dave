@@ -29,11 +29,10 @@ func ClearFocus() {
 	if err != nil {
 		panic(fmt.Sprintf("%s", err))
 	}
-	fmt.Println(string(f))
 
 	final := strings.Replace(string(f), string(newContent()), "", -1)
 
-	fmt.Println(final)
+	ioutil.WriteFile(HOSTS_FILE, []byte(final), 644)
 }
 
 func newContent() []byte {

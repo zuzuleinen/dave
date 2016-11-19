@@ -7,6 +7,10 @@ type MailGunConfig struct {
 }
 
 func Config() MailGunConfig {
-	config := MailGunConfig{"yourDomain", "privateKey", "publicKey"}
+	config := MailGunConfig{
+		"domain",
+		"privkey",
+		"pubkey",
+	}
 	return config
 }
