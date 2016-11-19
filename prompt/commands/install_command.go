@@ -1,10 +1,10 @@
 package commands
 
 import (
-	"github.com/zuzuleinen/dave/reminder"
-	"fmt"
 	"database/sql"
+	"fmt"
 	"github.com/zuzuleinen/dave/credentials"
+	"github.com/zuzuleinen/dave/reminder"
 )
 
 func InstallDatabase(db *sql.DB) {

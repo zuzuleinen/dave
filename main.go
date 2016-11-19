@@ -2,10 +2,10 @@ package main
 
 import (
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/zuzuleinen/dave/config"
 	"github.com/zuzuleinen/dave/database"
 	"github.com/zuzuleinen/dave/prompt"
 	"os"
-	"github.com/zuzuleinen/dave/config"
 )
 
 type Command struct {
@@ -21,7 +21,7 @@ func main() {
 }
 
 func NewCommand() *Command {
-	c := Command{command:"--help"}
+	c := Command{command: "--help"}
 
 	if len(os.Args) > 1 {
 		c.command = os.Args[1]

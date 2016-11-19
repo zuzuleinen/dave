@@ -3,10 +3,10 @@ package credentials
 import "database/sql"
 
 type Credential struct {
-	 Username string
-	 Password string
-	 Website string
-	 Notes string
+	Username string
+	Password string
+	Website  string
+	Notes    string
 }
 
 func CreateTable(db *sql.DB) {

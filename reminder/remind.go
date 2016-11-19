@@ -1,12 +1,12 @@
 package reminder
 
 import (
-	"fmt"
 	"database/sql"
-	"time"
-	"log"
-	"github.com/zuzuleinen/dave/email"
+	"fmt"
 	"github.com/zuzuleinen/dave/config"
+	"github.com/zuzuleinen/dave/email"
+	"log"
+	"time"
 )
 
 func Remind(db *sql.DB) {
@@ -29,7 +29,7 @@ func shouldRemind(r Reminder) bool {
 	}
 	thisYear, thisMonth, today := time.Now().Date()
 	y, m, d := t.Date()
-	if (thisYear == y && thisMonth == m && today == d) {
+	if thisYear == y && thisMonth == m && today == d {
 		return true
 	}
 	return false

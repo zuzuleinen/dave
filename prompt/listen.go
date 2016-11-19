@@ -2,12 +2,12 @@ package prompt
 
 import (
 	"database/sql"
-	"github.com/fatih/color"
-	"github.com/zuzuleinen/dave/prompt/commands"
-	"os"
-	"github.com/zuzuleinen/dave/reminder"
-	"github.com/zuzuleinen/dave/config"
 	"fmt"
+	"github.com/fatih/color"
+	"github.com/zuzuleinen/dave/config"
+	"github.com/zuzuleinen/dave/prompt/commands"
+	"github.com/zuzuleinen/dave/reminder"
+	"os"
 )
 
 func ObeyCommand(command string, argument string, db *sql.DB) {

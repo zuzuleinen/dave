@@ -1,10 +1,10 @@
 package commands
 
 import (
-	"io/ioutil"
+	"bytes"
 	"fmt"
 	"github.com/zuzuleinen/dave/config"
-	"bytes"
+	"io/ioutil"
 	"strings"
 )
 

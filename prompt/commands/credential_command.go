@@ -1,13 +1,13 @@
 package commands
 
 import (
+	"bufio"
 	"database/sql"
 	"fmt"
-	"os"
-	"bufio"
-	"strings"
-	"github.com/zuzuleinen/dave/credentials"
 	"github.com/fatih/color"
+	"github.com/zuzuleinen/dave/credentials"
+	"os"
+	"strings"
 )
 
 func Credential(db *sql.DB) {

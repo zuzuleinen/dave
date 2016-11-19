@@ -1,9 +1,9 @@
 package commands
 
 import (
+	"database/sql"
 	"fmt"
 	"github.com/zuzuleinen/dave/reminder"
-	"database/sql"
 )
 
 func ListReminders(db *sql.DB) {

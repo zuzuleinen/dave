@@ -5,12 +5,12 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/fatih/color"
+	"github.com/zuzuleinen/dave/config"
 	"github.com/zuzuleinen/dave/reminder"
 	"os"
 	"strconv"
 	"strings"
 	"time"
-	"github.com/zuzuleinen/dave/config"
 )
 
 func Remind(db *sql.DB) {

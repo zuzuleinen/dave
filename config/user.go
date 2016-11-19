@@ -5,7 +5,7 @@ func YourEmail() string {
 }
 
 //These websites will be added to /etc/hosts file when focus command is run
-func FavouriteWebSites()[] string  {
+func FavouriteWebSites() []string {
 	w := make([]string, 0)
 
 	w = append(w, "www.facebook.com")

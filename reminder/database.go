@@ -6,10 +6,10 @@ import (
 )
 
 type Reminder struct {
-	Name string
-	Time string
+	Name      string
+	Time      string
 	Processed int
-	RowId int
+	RowId     int
 }
 
 func CreateTable(db *sql.DB) {
