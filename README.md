@@ -75,7 +75,7 @@ Create a configuration file for your daemon:
 `sudo vim /etc/init/dave.conf`
 
 Add the following contents and make sure to replace andrei with your user and the correct path to dave executable:
-```
+```shell
 description "Run the dave daemon"
 
 setuid andrei
@@ -84,11 +84,11 @@ start on runlevel [2345]
 exec /home/andrei/Projects/bin/dave cli
 ```
 Check that your syntax is OK:
-```
+```shell
 sudo init-checkconf /etc/init/dave.conf
 ```
 Start your service
-````
+````shell
 sudo service dave start
 ```
 
