@@ -74,7 +74,7 @@ Here are the steps for setting up your daemon with upstart:
 Create a configuration file for your daemon:
 `sudo vim /etc/init/dave.conf`
 
-Add the following contents and make sure to replace andrei with your user and the correct path to dave executable:
+Add the following contents and make sure to replace *andrei* with your user and */home/andrei/Projects/bin/dave* with the path to your dave executable(it should be in the $GOPATH/bin):
 ```shell
 description "Run the dave daemon"
 
