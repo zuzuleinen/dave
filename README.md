@@ -66,5 +66,31 @@ Since `dave focus` and `dave focus-clear` requires sudo, you should add an alias
 ` alias focus-clear='sudo env "PATH=$PATH" dave focus-clear'`</br>
 Now, you can use `focus` and `focus-clear` commands.
 
+## Settings up the daemon
+To be able to receive your reminders, you need to set up the daemon which basically just loops over you reminders and send them to your e-mail when.
+Since I'm using Ubuntu, I use [upstart](http://upstart.ubuntu.com/). But you can also use [Supervisor](http://supervisord.org/) or [daemonize](http://software.clapper.org/daemonize/).
+Here are the steps for setting up your daemon with upstart:
+
+Create a configuration file for your daemon:
+`sudo vim /etc/init/dave.conf`
+
+Add the following contents and make sure to replace andrei with your user and the correct path to dave executable:
+```
+description "Run the dave daemon"
+
+setuid andrei
+start on runlevel [2345]
+
+exec /home/andrei/Projects/bin/dave cli
+```
+Check that your syntax is OK:
+```
+sudo init-checkconf /etc/init/dave.conf
+```
+Start your service
+````
+sudo service dave start
+```
+
 ## Questions or suggestions
 If you encounter a problem feel free to [open](https://github.com/zuzuleinen/dave/issues/new) an issue.
