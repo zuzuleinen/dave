@@ -66,9 +66,9 @@ Since `dave focus` and `dave focus-clear` requires sudo, you should add an alias
 ` alias focus-clear='sudo env "PATH=$PATH" dave focus-clear'`</br>
 Now, you can use `focus` and `focus-clear` commands.
 
-## Settings up the daemon
-To be able to receive your reminders, you need to set up the daemon which basically just loops over you reminders and send them to your e-mail when.
-Since I'm using Ubuntu, I use [upstart](http://upstart.ubuntu.com/). But you can also use [Supervisor](http://supervisord.org/) or [daemonize](http://software.clapper.org/daemonize/).
+## Setting up the daemon
+To be able to receive your reminders, you need to set up the daemon which basically just loops over you reminders and send them to your e-mail when it's time.
+Since I'm using Ubuntu, I use [upstart](http://upstart.ubuntu.com/). But you can also use [Supervisor](http://supervisord.org/) or [daemonize](http://software.clapper.org/daemonize/) to set up the daemon.
 Here are the steps for setting up your daemon with upstart:
 
 Create a configuration file for your daemon:
