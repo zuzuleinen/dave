@@ -11,6 +11,7 @@ import (
 const HOSTS_FILE = "/etc/hosts"
 
 func Focus() {
+	ClearFocus()
 	f, err := ioutil.ReadFile(HOSTS_FILE)
 
 	if err != nil {
