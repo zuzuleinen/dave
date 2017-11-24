@@ -88,7 +88,7 @@ Check that your syntax is OK:
 sudo init-checkconf /etc/init/dave.conf
 ```
 Start your service
-````shell
+```shell
 sudo service dave start
 ```
 
